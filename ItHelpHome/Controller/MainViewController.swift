@@ -152,7 +152,6 @@ class MainViewController: UIViewController {
     
     func runAgent(for text: String) async {
         do {
-            // 準備請求的 body
             let messagePart = MessagePart(text: text)
             let messagePayload = MessagePayload(role: "user", parts: [messagePart])
             let requestBody = SendMessageRequest(appName: "multi_tool_agent",

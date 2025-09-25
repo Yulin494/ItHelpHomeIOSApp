@@ -9,8 +9,6 @@ import Foundation
 
 // MARK: - Update Session API Request
 struct UpdateSessionRequest: Codable {
-    // 假設 state 的 value 都是 String，如果類型不固定，處理會更複雜
-    // 為了簡單起見，我們先假設是 [String: String]
     let state: [String: String]
 }
 
@@ -21,7 +19,7 @@ struct UpdateSessionResponse: Codable {
     let appName: String
     let userId: String
     let state: NestedState // 對應巢狀的 "state" 物件
-    let events: [Event]    // 使用自訂的 Event 結構，以應對未來可能的複雜內容
+    let events: [Event]
     let lastUpdateTime: Double
 
     // 將 API 回應中的 snake_case (例如 app_name) 轉換為 Swift 的 camelCase (例如 appName)
@@ -40,11 +38,9 @@ struct NestedState: Codable {
     let state: [String: AnyCodable]
 }
 
-// 雖然您提供的範例中 events 是空陣列，但為其建立一個結構是好的實踐
-// 如果 events 內容很複雜，未來可以直接擴充這個 struct
+
 struct Event: Codable {
-    // 根據您 API 的實際內容在這裡定義屬性
-    // 例如： let type: String, let timestamp: Double 等
+    
 }
 
 
@@ -145,10 +141,9 @@ struct RunContent: Codable {
 // "parts" 陣列中的元素可以是不同類型，我們需要一個 enum 來處理
 // 它可以是包含文字的、呼叫工具的、或工具回應的
 struct RunPart: Codable {
-    // 我們只關心最終答案的 "text"，所以將其設為可選
+
     let text: String?
     
-    // 其他可能的欄位，如果需要處理可以加上
     // let functionCall: FunctionCall?
     // let functionResponse: FunctionResponse?
 }
