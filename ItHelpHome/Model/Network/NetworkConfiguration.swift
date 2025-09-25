@@ -27,7 +27,7 @@ struct NetworkConfiguration {
         var host: String {
             switch self {
             case .adk:
-                return "YOUR IP ex: http://192.168....."
+                return "YOUR IP Ex:http://192.168....."
             }
         }
     }

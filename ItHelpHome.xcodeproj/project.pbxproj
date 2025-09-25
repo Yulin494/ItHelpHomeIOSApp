@@ -20,6 +20,7 @@
 		887B63CB2E841ABB006A711E /* NetworkConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887B63CA2E841ABB006A711E /* NetworkConfiguration.swift */; };
 		887B63CE2E841B6A006A711E /* SwiftHelpers in Frameworks */ = {isa = PBXBuildFile; productRef = 887B63CD2E841B6A006A711E /* SwiftHelpers */; };
 		887B63D12E842574006A711E /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 887B63D02E842574006A711E /* IQKeyboardManagerSwift */; };
+		887B63D32E852DF9006A711E /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887B63D22E852DF9006A711E /* String+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		887B63C42E84120E006A711E /* Adk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adk.swift; sourceTree = "<group>"; };
 		887B63C82E841A97006A711E /* NetWorkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkManager.swift; sourceTree = "<group>"; };
 		887B63CA2E841ABB006A711E /* NetworkConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfiguration.swift; sourceTree = "<group>"; };
+		887B63D22E852DF9006A711E /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 			children = (
 				887B63C62E841A5E006A711E /* Network */,
 				887B63C22E83D456006A711E /* MessageData.swift */,
+				887B63D22E852DF9006A711E /* String+Extensions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				887B63C32E83D456006A711E /* MessageData.swift in Sources */,
 				887B63BB2E82D643006A711E /* MainViewController.swift in Sources */,
 				887B63AF2E82D5BC006A711E /* AppDelegate.swift in Sources */,
+				887B63D32E852DF9006A711E /* String+Extensions.swift in Sources */,
 				887B63C92E841A97006A711E /* NetWorkManager.swift in Sources */,
 				887B63C02E83C6B4006A711E /* MainTableViewCell.swift in Sources */,
 				887B63B02E82D5BC006A711E /* SceneDelegate.swift in Sources */,

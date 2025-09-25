@@ -152,6 +152,7 @@ class MainViewController: UIViewController {
     
     func runAgent(for text: String) async {
         do {
+            // 準備請求的 body
             let messagePart = MessagePart(text: text)
             let messagePayload = MessagePayload(role: "user", parts: [messagePart])
             let requestBody = SendMessageRequest(appName: "multi_tool_agent",
@@ -170,14 +171,21 @@ class MainViewController: UIViewController {
             // 從回應陣列中找出我們需要的最終答案
             var botText = "抱歉，我無法處理您的請求。" // 預設訊息
             if let finalAnswer = response.last(where: { $0.content.parts.first?.text != nil }) {
-                botText = finalAnswer.content.parts.first?.text ?? botText
+                
+                let rawHtmlText = finalAnswer.content.parts.first?.text ?? botText
+                
+                botText = rawHtmlText.htmlToPlainText
             }
             
             // 將 Bot 的回覆顯示在畫面上
             let botMessage = Message(text: botText, sender: .bot)
-            messages.append(botMessage)
-            tbvChat.reloadData()
-//            scrollToBottom(animated: true)
+            print(botMessage.text)
+            
+            await MainActor.run {
+                messages.append(botMessage)
+                tbvChat.reloadData()
+                //            scrollToBottom(animated: true)
+            }
         } catch {
             print("❌ Failed to fetch bot response: \(error)")
             let errorMessage = Message(text: "獲取回覆失敗: \(error.localizedDescription)", sender: .bot)
