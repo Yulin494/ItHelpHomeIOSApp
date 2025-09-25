@@ -1,0 +1,38 @@
+# macOS
+.DS_Store
+
+# Xcode / Swift / iOS
+build/
+DerivedData/
+*.xcuserdatad
+*.xcscmblueprint
+*.xccheckout
+*.xcworkspace/xcuserdata/
+*.xcodeproj/project.xcworkspace/xcuserdata/
+*.ipa
+# SPM
+.swiftpm/
+.build/
+
+# CocoaPods
+Pods/
+*.xcworkspace
+
+# Carthage
+Carthage/Build/
+
+# Node（若有用）
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Python（若有用）
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# 環境變數/機密
+.env
+*.key
+*.pem
